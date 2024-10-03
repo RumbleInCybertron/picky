@@ -1,0 +1,58 @@
+# Python related
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+env/
+venv/
+ENV/
+Pipfile
+Pipfile.lock
+
+# FastAPI
+db.json  # If you don't want the local database to be included
+uploads/ # If storing uploaded images locally, ignore this directory
+
+# Environment variables
+.env
+*.env
+
+# Node.js (React/Next.js)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# .next for Next.js
+.next/
+# .vercel for Vercel deployments (Next.js)
+.vercel/
+# build for static React apps
+build/
+
+# Docker
+docker-compose.yml
+*.log
+*.pid
+*.seed
+*.pid.lock
+Dockerfile
+docker-compose.override.yml
+.env.docker
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+
+# Editor & OS files
+.vscode/
+.idea/
+*.DS_Store
+*.swp
+*.swo
+Thumbs.db
+
+# Logs
+logs/
+*.log
