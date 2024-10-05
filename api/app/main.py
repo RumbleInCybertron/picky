@@ -6,6 +6,15 @@ import shutil
 
 app = FastAPI()
 
+# Allow CORS from the Next.js frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 IMAGE_DIR = "images/"
 DATA_FILE = "data/images.json"
 
