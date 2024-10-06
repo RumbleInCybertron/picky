@@ -44,6 +44,7 @@ Features
 │
 ├── README.md                    # Project documentation
 └── docker-compose.yml           # Docker Compose for orchestrating services
+```
 
 Requirements
 
@@ -58,7 +59,7 @@ Installation
 
 git clone https://github.com/RumbleInCybertron/picky.git
 cd picky
-
+```
 
 2. Set up the back end (FastAPI)
 Install dependencies
@@ -72,7 +73,7 @@ python -m venv env
 source env/bin/activate (MacOS)
 .\env\Scripts\Activate.ps1 (Windows)
 pip install -r requirements.txt
-
+```
 
 Create necessary directories (Only if not successfully created by API) *This has been tested to work*
 
@@ -81,6 +82,7 @@ Make sure the images/ directory exists for storing images:
 ```bash
 
 mkdir -p api/app/images
+```
 
 If the data/images.json file does not exist, it will be created when the app starts.
 Run the back end
@@ -88,6 +90,7 @@ Run the back end
 ```bash
 
 uvicorn app.main:app --reload
+```
 
 
 By default, the API will be available at: http://localhost:8000
@@ -98,6 +101,7 @@ Install dependencies
 
 cd web
 npm install
+```
 
 
 Run the front end (web)
@@ -105,6 +109,7 @@ Run the front end (web)
 ```bash
 
 npm run dev
+```
 
 
 The front end will be available at: http://localhost:3000
@@ -170,6 +175,7 @@ You can run both the FastAPI back end and the Next.js front end in Docker contai
 ```bash
 
 docker-compose up --build
+```
 
 
 This will start:
@@ -182,11 +188,12 @@ This will start:
 ```bash
 
 docker-compose down
+```
 
 
 Dockerfile for FastAPI (backend/Dockerfile)
 
-dockerfile
+```dockerfile
 
 # Backend Dockerfile
 
@@ -203,8 +210,9 @@ COPY . .
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
 Dockerfile for Next.js (frontend/Dockerfile)
+```
 
-dockerfile
+```dockerfile
 
 # Frontend Dockerfile
 
@@ -223,8 +231,9 @@ EXPOSE 3000
 CMD ["npm", "run", "dev"]
 
 Docker Compose (docker-compose.yml)
+```
 
-yaml
+```yaml
 
 version: "3.9"
 
@@ -245,6 +254,7 @@ services:
       - "3000:3000"
     depends_on:
       - api
+```
 
 How to Use
 
