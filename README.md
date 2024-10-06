@@ -13,7 +13,7 @@ Features
 
     Back-End (api): FastAPI, Python, PIL for image processing
     Front-End (web): Next.js with TypeScript and Tailwind CSS
-    Storage: Images stored locally, metadata stored in a JSON file (db.json)
+    Storage: Images stored locally, metadata stored in a JSON file (images.json)
     Docker: Containerized the application for easy deployment
 
 ### Project Structure
