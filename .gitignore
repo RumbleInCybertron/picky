@@ -36,8 +36,7 @@ docker-compose.yml
 *.log
 *.pid
 *.seed
-*.pid.lock
-Dockerfile
+*.pid.lock.
 docker-compose.override.yml
 .env.docker
 
