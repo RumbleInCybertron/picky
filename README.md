@@ -46,13 +46,13 @@ Features
 └── docker-compose.yml           # Docker Compose for orchestrating services
 ```
 
-Requirements
+## Requirements
 
     Docker
     Python 3.10 or higher
     Node.js 18 or higher
 
-Installation
+# Installation
 1. Clone the repository
 
 ```bash
@@ -92,8 +92,8 @@ Run the back end
 uvicorn app.main:app --reload
 ```
 
-
 By default, the API will be available at: http://localhost:8000
+
 3. Set up the front end (Next.js)
 Install dependencies
 
@@ -111,9 +111,9 @@ Run the front end (web)
 npm run dev
 ```
 
-
 The front end will be available at: http://localhost:3000
-API Endpoints (Back End)
+
+## API Endpoints (Back End)
 1. Upload and Compress Image
 
     POST /images/
@@ -155,7 +155,7 @@ Request Example:
 
 DELETE /images/{image_id}
 
-Frontend Pages (Next.js)
+## Frontend Pages (Next.js)
 1. Upload Image Page
 
     Route: /
@@ -176,7 +176,6 @@ You can run both the FastAPI back end and the Next.js front end in Docker contai
 
 docker-compose up --build
 ```
-
 
 This will start:
 
@@ -208,9 +207,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+```
 
 Dockerfile for Next.js (frontend/Dockerfile)
-```
 
 ```dockerfile
 
@@ -229,9 +228,9 @@ COPY . .
 EXPOSE 3000
 
 CMD ["npm", "run", "dev"]
+```
 
 Docker Compose (docker-compose.yml)
-```
 
 ```yaml
 
@@ -256,7 +255,7 @@ services:
       - api
 ```
 
-How to Use
+# How to Use
 
     Upload Images: Navigate to http://localhost:3000/, select an image, preview it, and upload it. The image will be sent to the FastAPI back end and compressed.
 
@@ -264,6 +263,6 @@ How to Use
 
     Delete Images: Click the "Delete" button next to any image in the gallery to remove it both from the JSON database and the local file system.
 
-License
+## License
 
-This project is open-source and licensed under the MIT License.
+    This project is open-source and licensed under the MIT License.
