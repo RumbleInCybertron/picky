@@ -56,7 +56,6 @@ def delete_image(image_id):
     
     if image_to_del:
       # Delete the physical img file from the file system
-      # image_path = os.path.join(IMAGE_DIR, image_to_del['filepath'])
       image_filename = image_to_del['filepath']
       compressed_image_filename = image_to_del['compressed_filepath']
       
@@ -81,6 +80,4 @@ def delete_image(image_id):
       else:
         print("One or both files could not be deleted. Metadata not removed.")
     
-    # updated_data = [image for image in data if image["id"] != image_id]
-    # save_data(updated_data)
     return {"message": "Image deleted successfully"}

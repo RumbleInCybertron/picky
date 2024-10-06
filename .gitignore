@@ -12,8 +12,8 @@ Pipfile
 Pipfile.lock
 
 # FastAPI
-db.json  # If you don't want the local database to be included
-uploads/ # If storing uploaded images locally, ignore this directory
+images.json  # If you don't want the local database to be included
+images/ # If storing uploaded images locally, ignore this directory
 
 # Environment variables
 .env
