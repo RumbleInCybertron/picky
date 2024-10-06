@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api/images:/app/images
+      - ./api/data:/app/data
+    environment:
+      - UPLOAD_DIR=/app/images
+
+  web:
+    build: ./web
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api

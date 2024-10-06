@@ -32,7 +32,6 @@ yarn-error.log*
 build/
 
 # Docker
-docker-compose.yml
 *.log
 *.pid
 *.seed
