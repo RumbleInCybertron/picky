@@ -1,6 +1,6 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 from app import compress_image
 from app import save_image, get_image, delete_image, get_all_images
 import os
@@ -56,4 +56,8 @@ async def download_image(image_id: str):
 
 @app.delete("/images/{image_id}")
 async def remove_image(image_id: str):
-    return delete_image(image_id)
+  success = delete_image(image_id)
+  if not success:
+    raise HTTPException(status_code=404, detail="Image not found")
+    
+  return JSONResponse(content={"message": "Image removed successfully"})
