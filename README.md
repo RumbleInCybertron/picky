@@ -18,7 +18,7 @@ Features
 
 ### Project Structure
 
-bash
+```bash
 
 .
 ├── api/
@@ -54,7 +54,7 @@ Requirements
 Installation
 1. Clone the repository
 
-bash
+```bash
 
 git clone https://github.com/RumbleInCybertron/picky.git
 cd picky
@@ -65,7 +65,7 @@ Install dependencies
 
 If you are running it locally, create a virtual environment and install the required dependencies:
 
-bash
+```bash
 
 cd backend
 python -m venv env
@@ -78,14 +78,14 @@ Create necessary directories (Only if not successfully created by API) *This has
 
 Make sure the images/ directory exists for storing images:
 
-bash
+```bash
 
 mkdir -p api/app/images
 
 If the data/images.json file does not exist, it will be created when the app starts.
 Run the back end
 
-bash
+```bash
 
 uvicorn app.main:app --reload
 
@@ -94,7 +94,7 @@ By default, the API will be available at: http://localhost:8000
 3. Set up the front end (Next.js)
 Install dependencies
 
-bash
+```bash
 
 cd web
 npm install
@@ -102,7 +102,7 @@ npm install
 
 Run the front end (web)
 
-bash
+```bash
 
 npm run dev
 
@@ -167,7 +167,7 @@ Build and Run with Docker
 You can run both the FastAPI back end and the Next.js front end in Docker containers using Docker Compose.
 1. Build and run the containers
 
-bash
+```bash
 
 docker-compose up --build
 
@@ -179,7 +179,7 @@ This will start:
 
 2. Stopping the containers
 
-bash
+```bash
 
 docker-compose down
 
@@ -245,8 +245,6 @@ services:
       - "3000:3000"
     depends_on:
       - api
-
-### end yaml
 
 How to Use
 
