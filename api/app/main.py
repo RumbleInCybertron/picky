@@ -19,8 +19,17 @@ app.add_middleware(
 IMAGE_DIR = "images/"
 DATA_FILE = "data/images.json"
 
-# Ensure image directory exists
-os.makedirs(IMAGE_DIR, exist_ok=True)
+# Ensure directories and json file exist on startup
+def initialize_files():
+  os.makedirs(IMAGE_DIR, exist_ok=True)
+  if not os.path.exists(DATA_FILE):
+    os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+    with open(DATA_FILE, 'w') as f:
+      json.dump([], f)
+      
+@app.on_event("startup")
+async def startup_event():
+  initialize_files()
 
 @app.post("/images/")
 async def upload_image(file: UploadFile = File(...)):
