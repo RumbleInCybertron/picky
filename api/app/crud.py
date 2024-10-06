@@ -1,7 +1,14 @@
 from uuid import uuid4
 import json
+import os
+
+DATA_FILE = "data/images.json"
 
 def load_data():
+  # Check if the file exists and is not empty
+  if os.stat(DATA_FILE).st_size == 0:
+    return []
+  
   with open(DATA_FILE, "r") as file:
     return json.load(file)
   
