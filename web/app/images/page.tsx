@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface Image {
   id: string;
@@ -11,6 +12,7 @@ interface Image {
 const ImageList = () => {
   const [images, setImages] = useState<Image[]>([]);
   const [loading, setLoading] = useState(false);
+  const router = useRouter(); // Use Next.js router for page navigation
 
   // Fetch all images from the API
   const fetchImages = async () => {
@@ -65,6 +67,15 @@ const ImageList = () => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold text-center mb-6">Image Gallery</h1>
+
+      <div className="flex justify-center mb-6">
+        <button
+          className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+          onClick={() => router.push("/upload")} // Redirect to upload page
+        >
+          Upload New Image
+        </button>
+      </div>
 
       {images.length === 0 ? (
         <p className="text-center">No images available.</p>
